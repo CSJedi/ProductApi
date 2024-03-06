@@ -15,9 +15,7 @@ namespace ProductApp.DAL.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>()
-                .Property(p => p.Quantity)
-                .IsRequired();
+            modelBuilder.Entity<Product>().ToTable("Products");
         }
     }
 }

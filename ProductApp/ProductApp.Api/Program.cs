@@ -19,7 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ProductDbContext>(options =>
-    options.UseSqlite("Data Source=..\\..\\products.sqlite"), ServiceLifetime.Singleton);
+    options.UseSqlite("Data Source=..\\..\\products.sqlite"), ServiceLifetime.Scoped);
 builder.Services.AddScoped<ILoggingService>(provider =>
 {
     var configuration = provider.GetRequiredService<IConfiguration>();
